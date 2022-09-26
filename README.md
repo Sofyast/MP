@@ -1,13 +1,15 @@
-Lock-free контейнер
+# Lock-free контейнер
 
-Реализуйте LockFreeSet. Использовать контейнеры из java.util.concurrent запрещено. 
-Решение должно быть эффективным (несколько потоков могут менять структуры в разных частях)
+**Языки для решения задачи: Java, Kotlin**
 
+Реализуйте LockFreeSet. Использовать контейнеры из java.util.concurrent запрещено. Решение должно быть эффективным (несколько потоков могут менять структуры в разных частях)
 
+```java
 /**
  * Lock-Free множество.
  * @param <T> Тип ключей
  */
+
 public interface Set<T extends Comparable<T>> {
     /**
      * Добавить ключ к множеству
@@ -18,9 +20,8 @@ public interface Set<T extends Comparable<T>> {
      * @return false если value уже существует в множестве,
      * true если элемент был добавлен
      */
-    boolean add(T value);
-
-
+   
+   boolean add(T value);
     /**
      * Удалить ключ из множества
      *
@@ -29,8 +30,8 @@ public interface Set<T extends Comparable<T>> {
      * @param value значение ключа
      * @return false если ключ не был найден, true если ключ успешно удален
      */
-    boolean remove(T value);
-
+   
+   boolean remove(T value);
 
     /**
      * Проверка наличия ключа в множестве
@@ -40,8 +41,8 @@ public interface Set<T extends Comparable<T>> {
      * @param value значение ключа
      * @return true если элемент содержится в множестве, иначе - false
      */
-    boolean contains(T value);
-
+  
+  boolean contains(T value);
 
     /**
      * Проверка множества на пустоту
@@ -52,8 +53,7 @@ public interface Set<T extends Comparable<T>> {
      */
     boolean isEmpty();
 }
-  
-    
-Тестирование:
+```
 
-Для разработанных алгоритмов необходимо написать тесты. Покрытие тестами должно превышать 70%
+Тестирование:
+* Для разработанных алгоритмов необходимо написать тесты. Покрытие тестами должно превышать 70%
