@@ -16,7 +16,7 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
     
         find_again:
    
-        while (true) {                 // ?
+        while (true) {                  // ?
             Node<T> pred = konez;
             Node<T> curr = konez.next.getReference();            // возвращает текущее значение ссылки
            
@@ -24,7 +24,7 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
                 boolean[] cmk = {false};              // cmk - ?
                 Node<T> succ = curr.next.get(cmk);       // curr.next.get(cmk) - ?
                 if (cmk[0]) {
-                    if (pred.next.compareAndSet(curr, succ, false, false)) {    
+                    if (pred.next.compareAndSet(curr, succ, false, false)) {    // с compareAndSet знакома, но что тут значат переменные через точку pred.next
                         continue find_again;
                     }
                     curr = succ;
@@ -55,7 +55,7 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
             } else {
                 Node<T> addNode = new Node<>(value, null);
                 addNode.next.set(curr, false);
-                if (pred.next.compareAndSet(curr, addNode, false, false)) {
+                if (pred.next.compareAndSet(curr, addNode, false, false)) {   
                     return true;
                 }
             }
