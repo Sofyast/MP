@@ -6,23 +6,23 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
     public final Node<T> startt;         
     public final Node<T> konez;
 
-    public SetImpl() {
-        startt = new Node<>(null, null);        // ?
+    public SetImpl() {                // ?
+        startt = new Node<>(null, null);       
         konez = new Node<>(null, startt);
     }
 
     public ArrayList<Node<T>> find(T value) {
-        ArrayList<Node<T>> arrayN = new ArrayList<Node<T>>(2);
+        ArrayList<Node<T>> arrayN = new ArrayList<Node<T>>(2);     // ?
     
         find_again:
    
-        while (true) {
+        while (true) {                 // ?
             Node<T> pred = konez;
             Node<T> curr = konez.next.getReference();            // возвращает текущее значение ссылки
            
             while (true) {
-                boolean[] cmk = {false};
-                Node<T> succ = curr.next.get(cmk);
+                boolean[] cmk = {false};              // cmk - ?
+                Node<T> succ = curr.next.get(cmk);       // curr.next.get(cmk) - ?
                 if (cmk[0]) {
                     if (pred.next.compareAndSet(curr, succ, false, false)) {    
                         continue find_again;
@@ -30,8 +30,8 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
                     curr = succ;
                 } else {
               
-                    if (curr.item == null || curr.item.compareTo(value) >= 0) {
-                        arrayN.add(pred);
+                    if (curr.item == null || curr.item.compareTo(value) >= 0) {     // curr.item - ?
+                        arrayN.add(pred);            // arrayN.add ?
                         arrayN.add(curr);
                         return arrayN;
                     } else {
@@ -47,8 +47,8 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
     @Override
     public boolean add(T value) {    //добавить ключ к множеству
         while (true) {
-            ArrayList<Node<T>> arrayN = find(value);
-            Node<T> pred = arrayN.get(0);
+            ArrayList<Node<T>> arrayN = find(value);        // ?
+            Node<T> pred = arrayN.get(0);                // get - ?
             Node<T> curr = arrayN.get(1);
             if (curr.item != null && curr.item.compareTo(value) == 0) {
                 return false;
