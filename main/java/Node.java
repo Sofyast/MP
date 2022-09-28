@@ -1,8 +1,8 @@
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class Node<T extends Comparable<T>> {
+public class Node<T extends Comparable<T>> {      //?
     T item;
-    AtomicMarkableReference<Node<T>> next;
+    AtomicMarkableReference<Node<T>> next;      //?
 
 
     public Node(T item, Node<T> next) {
