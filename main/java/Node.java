@@ -7,6 +7,6 @@ public class Node<T extends Comparable<T>> {
 
     public Node(T item, Node<T> next) {
         this.item = item;
-        this.next = new AtomicMarkableReference<>(next, false);
+        this.next = new AtomicMarkableReference<>(next, false);     //?
     }
 }
