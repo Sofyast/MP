@@ -3,16 +3,16 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;         //?
 
 public class SetTest {
     @Test
-    public void add() throws InterruptedException {
+    public void add() throws InterruptedException {          //?
         Set<Integer> integerSet = new SetImpl<>();
         ArrayList<Thread> threadArrayList = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             int tx = i;
-            threadArrayList.add(new Thread(() -> assertTrue(integerSet.add(tx))));
+            threadArrayList.add(new Thread(() -> assertTrue(integerSet.add(tx))));         //?
         }
         for (Thread th :
                 threadArrayList) {
@@ -26,8 +26,8 @@ public class SetTest {
     }
 
     @Test
-    public void remove() throws InterruptedException {
-        Set<Integer> integerSet = new SetImpl<>();
+    public void remove() throws InterruptedException {             //?
+        Set<Integer> integerSet = new SetImpl<>();                 //?
         ArrayList<Thread> threadArrayList = new ArrayList<>();
         for (int i = 1; i < 10; i++) {
             integerSet.add(i);
@@ -49,7 +49,7 @@ public class SetTest {
 
 
     @Test
-    public void contains() throws InterruptedException {
+    public void contains() throws InterruptedException {         
         Set<Integer> integerSet = new SetImpl<>();
         ArrayList<Thread> threadArrayList = new ArrayList<>();
         Random rnd = new Random();
@@ -59,7 +59,7 @@ public class SetTest {
         }
         for (int i = 1; i < 5; i++) {
             int tx = rnd.nextInt(rndMax);
-            threadArrayList.add(new Thread(() -> assertTrue(integerSet.contains(tx))));
+            threadArrayList.add(new Thread(() -> assertTrue(integerSet.contains(tx))));       //?
         }
         for (Thread th :
                 threadArrayList) {
@@ -74,7 +74,7 @@ public class SetTest {
     @Test
     public void isEmpty() {
         Set<Integer> integerSet = new SetImpl<>();
-        ArrayList<Thread> threadArrayList = new ArrayList<>();
+        ArrayList<Thread> threadArrayList = new ArrayList<>();         //?
 
 
     }
