@@ -3,12 +3,12 @@ import java.util.ArrayList;                                     //curr - тек�
 public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
 
     //    создание пустого списка, сотоящего из 2-x граничных элементов
-    public final Node<T> startt;         
-    public final Node<T> konez;
+    public final Node<T> vtoroe;         
+    public final Node<T> pervoe;
 
     public SetImpl() {                // ?
-        startt = new Node<>(null, null);       
-        konez = new Node<>(null, startt);
+        vtoroe = new Node<>(null, null);       
+        pervoe = new Node<>(null, vtotoe);
     }
 
     public ArrayList<Node<T>> find(T value) {
@@ -17,8 +17,8 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
         find_again:
    
         while (true) {                  // ?
-            Node<T> pred = konez;
-            Node<T> curr = konez.next.getReference();            // возвращает текущее значение ссылки
+            Node<T> pred = pervoe;
+            Node<T> curr = pervoe.next.getReference();            // возвращает текущее значение ссылки
            
             while (true) {
                 boolean[] cmk = {false};              // cmk - ?
