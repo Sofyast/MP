@@ -83,7 +83,7 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
 
     @Override
     public boolean contains(T value) {             //проверка наличия ключа в множестве
-        Node<T> curr = konez.next.getReference();
+        Node<T> curr = pervoe.next.getReference();
         while (curr.item != null && curr.item.compareTo(value) < 0) {
             curr = curr.next.getReference();
         }
@@ -92,12 +92,12 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
 
     @Override
     public boolean isEmpty() {            //проверка множества на пустоту
-        while (konez.next.getReference() != startt) {
-            Node<T> curr = konez.next.getReference();
+        while (pervoe.next.getReference() != vtoroe) {
+            Node<T> curr = pervoe.next.getReference();
             if (!curr.next.isMarked()) {
                 return false;
             } else {
-                konez.next.compareAndSet(curr, curr.next.getReference(), false, false);
+                pervoe.next.compareAndSet(curr, curr.next.getReference(), false, false);
             }
         }
         return true;
