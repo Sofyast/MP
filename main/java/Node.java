@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class Node<T extends Comparable<T>> {      //?
+public class Node<T extends Comparable<T>> {      //выражение T extends Comparable<T> определяет T (переменную типа), ограниченную сверху типом Comparable<T>
     T item;
     AtomicMarkableReference<Node<T>> next;      //объеденим ссылку на следующий элемент списка и метку о том, что узел удален в одно поле
 
