@@ -8,7 +8,7 @@ public class SetImpl<T extends Comparable<T>> implements Set<T> {        // ?
 
     public SetImpl() {                // ?
         vtoroe = new Node<>(null, null);       
-        pervoe = new Node<>(null, vtotoe);
+        pervoe = new Node<>(null, vtoroe);
     }
 
     public ArrayList<Node<T>> find(T value) {
